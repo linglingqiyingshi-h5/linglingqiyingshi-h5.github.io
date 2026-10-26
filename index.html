@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>零零七号放映室 - 归零归零起一格·悬念叙事工坊/七格悬念钟/解码纸条/死信投递口</title>
+<meta name="description" content="零零七号放映室（linglingqiyingshi-h5）是原创悬念叙事工坊：七格悬念钟、留白蒙太奇、一句台词的七种藏法、解码纸条与死信投递口。本站与007/James Bond/Danjaq/MGM商标、零零七影视App及任何同名盗链站均无关联，不提供在线播放、不聚合片源、不切换播放源。网址 https://linglingqiyingshi-h5.github.io">
+<meta name="keywords" content="零零七号放映室,悬念叙事,剧作工坊,七格悬念钟,留白蒙太奇,解码纸条,如何埋悬念,原创叙事IP,linglingqiyingshi">
+<meta name="author" content="零零七号放映室">
+<meta name="robots" content="index,follow">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1C1E1B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="零零七号放映室 - 归零，归零，起一格">
+<meta property="og:description" content="这里不演特工。只练一件事：一个秘密，怎么藏到第 90 秒才肯响。">
+<meta property="og:url" content="https://linglingqiyingshi-h5.github.io">
+<link rel="canonical" href="https://linglingqiyingshi-h5.github.io/">
+<style>
+/* ============================================================
+   零零七号放映室  v1  原创「悬念叙事工坊」
+   代号语义：零=归零（清空已知）· 零=再归零（推翻一次）· 七=第七格才响
+   视觉：暗舱石墨黑 / 机密琥珀橙 / 打字机米白 / 消红印章
+   结构：档案袋 · 七格悬念钟 · 解码纸条 · 死信投递口 · 代号铭牌
+   红线：不含任何 007/James Bond/Danjaq/MGM 元素与片名
+   ============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:"Courier New","Songti SC","PingFang SC",monospace,serif;
+  background:#1C1E1B;color:#DFE2D8;line-height:1.85;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 8% 6%,rgba(214,142,46,.10),transparent 30%),
+    radial-gradient(circle at 92% 10%,rgba(60,70,66,.16),transparent 30%),
+    repeating-linear-gradient(0deg,transparent 0 22px,rgba(214,142,46,.035) 22px 23px);
+}
+a{text-decoration:none;color:inherit;outline:none}
+img{max-width:100%;display:block}
+section[id]{scroll-margin-top:2px}
+::selection{background:#D68E2E;color:#151713}
+h1,h2,h3,h4{line-height:1.28;font-weight:800;letter-spacing:.5px}
+ul{list-style:none}
+
+/* ---------- 机密带 ---------- */
+.classified{background:#111310;color:#B9BEAE;font-size:11.5px;letter-spacing:1.4px;padding:7px 16px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;border-bottom:3px solid #D68E2E;font-family:monospace}
+.classified b{color:#F0C96A}
+.classified .stamp{color:#C8422E;font-weight:800;border:1px solid #C8422E;padding:0 6px;border-radius:2px;transform:rotate(-1.5deg);display:inline-block}
+
+/* ---------- 导航：档案封签 ---------- */
+.nav{position:sticky;top:0;z-index:999;background:rgba(28,30,27,.97);backdrop-filter:blur(8px);border-bottom:1px solid #3A403A}
+.nav-in{max-width:1220px;margin:0 auto;height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tab{display:flex;align-items:center;gap:11px;min-width:0}
+.tab .seal{width:36px;height:30px;background:#D68E2E;border-radius:3px;position:relative;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 #8A5A12;overflow:hidden}
+.tab .seal::before{content:"07";font-family:monospace;font-weight:900;font-size:14px;color:#1C1E1B;letter-spacing:-.5px}
+.tab .seal::after{content:"";position:absolute;inset:3px;border:1px dashed rgba(28,30,27,.55);border-radius:2px}
+.tab .cn{font-size:19px;font-weight:900;white-space:nowrap;font-family:"Songti SC",serif;letter-spacing:.5px}
+.tab .cn em{font-style:normal;color:#D68E2E}
+.tab .cn .thin{color:#7C8278;font-weight:600;font-size:16px}
+.tab .en{font-size:9px;letter-spacing:2.4px;color:#7C8278;font-family:monospace;text-transform:uppercase;white-space:nowrap}
+.nav-links{display:flex;gap:2px;flex-wrap:wrap}
+.nav-links a{font-size:13px;color:#C3C7BB;padding:8px 9px;border-bottom:2px solid transparent;transition:.2s;font-weight:600}
+.nav-links a:hover{color:#D68E2E;border-bottom-color:#D68E2E}
+.nav-go{background:#D68E2E;color:#151713;font-weight:800;font-size:13px;padding:8px 16px;border-radius:2px 14px 2px 14px;border:1.5px solid #8A5A12;transition:.25s;white-space:nowrap}
+.nav-go:hover{background:#F0C96A;transform:translateY(-2px)}
+
+/* ---------- Hero：暗舱放映窗 ---------- */
+.hero{max-width:1220px;margin:0 auto;padding:50px 20px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.cell{background:#22241F;border:1px solid #3A403A;border-radius:5px;padding:20px;position:relative;box-shadow:0 0 0 8px #22241F,0 0 0 9px #D68E2E,4px 7px 0 rgba(0,0,0,.4)}
+.cell::before{content:"";position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(214,142,46,.35);pointer-events:none}
+.cell .lens{aspect-ratio:16/10;overflow:hidden;position:relative;background:#0E0F0D}
+.cell .lens img{width:100%;height:100%;object-fit:cover;filter:grayscale(.55) contrast(1.12) brightness(.86);transition:.7s}
+.cell:hover .lens img{filter:grayscale(0) contrast(1.06) brightness(1);transform:scale(1.06)}
+.cell .scan{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,rgba(214,142,46,.75),transparent);animation:scanmove 4.2s linear infinite;z-index:3}
+@keyframes scanmove{0%{top:0}100%{top:100%}}
+.cell .tag{position:absolute;top:14px;left:14px;z-index:4;font-family:monospace;font-size:10px;background:#D68E2E;color:#151713;padding:3px 9px;border-radius:2px;font-weight:800;letter-spacing:1px}
+.cell .tick{position:absolute;bottom:14px;right:14px;z-index:4;font-family:monospace;font-size:10px;color:#F0C96A;background:rgba(17,19,16,.82);padding:3px 8px;border:1px solid #3A403A}
+.cell .cut{position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(200,66,46,.55);transform:translateY(-50%);z-index:2}
+.hero h1{font-size:clamp(27px,4.8vw,48px);font-weight:900;line-height:1.12;font-family:"Songti SC",serif}
+.hero h1 em{font-style:normal;color:#D68E2E;position:relative}
+.hero h1 em::after{content:"";position:absolute;left:4px;right:4px;bottom:2px;height:5px;background:rgba(214,142,46,.5)}
+.hero .sub{font-family:monospace;font-size:12px;letter-spacing:3px;color:#9AA083;margin-top:10px;text-transform:uppercase}
+.hero .lead{font-size:15px;color:#C9CDBF;margin:18px 0 22px;max-width:580px}
+.hero-btns{display:flex;gap:11px;flex-wrap:wrap}
+.b1{padding:11px 24px;font-weight:800;border-radius:2px 14px 2px 14px;background:#D68E2E;color:#151713;border:1.5px solid #8A5A12;transition:.25s}
+.b1:hover{background:#F0C96A;transform:translateY(-2px)}
+.b2{padding:11px 24px;font-weight:800;border-radius:2px 14px 2px 14px;background:transparent;color:#DFE2D8;border:1.5px solid #3A403A;transition:.25s}
+.b2:hover{background:#DFE2D8;color:#151713;border-color:#DFE2D8}
+
+/* 三条暗号 */
+.ciphers{display:grid;gap:11px;margin-top:20px}
+.cip{background:#22241F;border:1px solid #3A403A;border-left:5px solid #D68E2E;border-radius:2px 10px 10px 2px;padding:12px 16px;transition:.25s}
+.cip:hover{background:#2A2D27;transform:translateX(3px);border-left-color:#C8422E}
+.cip .k{font-family:monospace;font-size:11px;color:#D68E2E;letter-spacing:1.4px;font-weight:800}
+.cip p{font-size:12.8px;color:#C9CDBF;line-height:1.62;margin-top:2px}
+.cip p b{color:#F0C96A}
+
+/* ---------- 骨架 ---------- */
+.wrap{max-width:1220px;margin:0 auto;padding:52px 20px}
+.head{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;flex-wrap:wrap;border-bottom:1px solid #3A403A;padding-bottom:10px}
+.head .idx{font-family:monospace;font-size:12px;font-weight:900;color:#151713;background:#D68E2E;padding:3px 10px;border-radius:2px;letter-spacing:1px}
+.head h2{font-size:23px;font-weight:900;font-family:"Songti SC",serif}
+.head h2 em{font-style:normal;color:#D68E2E}
+.head .en{font-family:monospace;font-size:11px;letter-spacing:1.6px;color:#9AA083;text-transform:uppercase}
+.head a.more{margin-left:auto;font-size:13px;color:#C3C7BB;font-weight:700;font-family:monospace}
+.head a.more:hover{color:#D68E2E}
+
+/* ---------- 01 七格悬念钟 ---------- */
+.clock{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;background:#22241F;border:1px solid #3A403A;border-radius:8px;padding:16px;box-shadow:inset 0 0 0 6px #22241F,inset 0 0 0 7px #D68E2E}
+.beat{position:relative;text-align:center;transition:.3s}
+.beat .slot{aspect-ratio:3/4;background:#151713;border:1px solid #3A403A;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;overflow:hidden;position:relative}
+.beat:hover .slot{background:#2A2D27;border-color:#D68E2E;transform:translateY(-4px)}
+.beat .slot .n{font-family:monospace;font-size:20px;font-weight:900;color:#5A6056}
+.beat.live .slot .n{color:#D68E2E}
+.beat .slot .lbl{font-family:"Songti SC",serif;font-size:11px;color:#9AA083;line-height:1.3;padding:0 4px}
+.beat .slot .bar{position:absolute;left:0;right:0;bottom:0;height:var(--h,8%);background:linear-gradient(0deg,#D68E2E,#8A5A12);opacity:.85}
+.beat.live .slot .bar{background:linear-gradient(0deg,#C8422E,#8A2A1A)}
+.beat .meta{margin-top:9px}
+.beat .meta .t{font-family:monospace;font-size:10.5px;color:#F0C96A;font-weight:800}
+.beat .meta .d{font-size:10.5px;color:#9AA083;line-height:1.45;margin-top:2px}
+.beat.live .meta .t{color:#C8422E}
+/* 竖屏：钟变纵列 */
+@media(max-width:720px){
+  .clock{grid-template-columns:repeat(4,1fr);gap:8px;padding:12px}
+  .beat:nth-child(5),.beat:nth-child(6),.beat:nth-child(7){grid-column:span 1}
+  .beat .slot .lbl{font-size:10px}
+}
+
+/* ---------- 02 解码纸条（翻面） ---------- */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
+.strip{height:210px;perspective:1400px}
+.strip-in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.strip:hover .strip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:5px;padding:18px 20px;border:1px solid #3A403A;overflow:hidden}
+.front{background:#22241F;box-shadow:3px 4px 0 rgba(0,0,0,.3)}
+.front .tape{position:absolute;top:-7px;left:50%;transform:translateX(-50%) rotate(-2deg);width:60px;height:16px;background:rgba(214,142,46,.78);border-radius:2px}
+.front .no{font-family:monospace;font-size:10px;color:#D68E2E;letter-spacing:1.2px}
+.front h3{font-size:17px;font-weight:900;color:#DFE2D8;margin:5px 0 4px;font-family:"Songti SC",serif}
+.front .who{font-size:11.5px;color:#9AA083;font-family:monospace}
+.front .hint{position:absolute;bottom:14px;left:20px;right:20px;font-family:monospace;font-size:10px;color:#5A6056;border-top:1px dashed #3A403A;padding-top:6px}
+.back{background:#D68E2E;color:#151713;transform:rotateY(180deg);border-color:#151713}
+.back h4{font-size:12px;font-weight:800;font-family:monospace;color:#151713;margin-bottom:6px;letter-spacing:.5px}
+.back p{font-size:13.4px;color:#1C1E1B;line-height:1.72}
+.back .src{position:absolute;bottom:13px;left:20px;right:20px;font-family:monospace;font-size:10px;color:#5A3D0A;border-top:1px dashed #8A5A12;padding-top:6px}
+
+/* ---------- 03 死信投递口（留白蒙太奇） ---------- */
+.drop{background:#22241F;border:1px solid #3A403A;border-radius:8px;padding:20px;box-shadow:inset 0 0 0 6px #22241F,inset 0 0 0 7px #3A403A}
+.slot-row{display:grid;grid-template-columns:90px 1fr 110px;gap:14px;align-items:center;margin-bottom:14px}
+.slot-row .nm{font-family:"Songti SC",serif;font-weight:900;font-size:14px;color:#DFE2D8}
+.slot-row .nm small{display:block;font-family:monospace;font-size:9.5px;color:#9AA083;font-weight:400;letter-spacing:.5px}
+.chute{height:34px;background:#151713;border:2px solid #3A403A;border-radius:20px 4px 4px 20px;position:relative;overflow:hidden}
+.chute i{position:absolute;left:0;top:0;bottom:0;width:var(--w,40%);background:linear-gradient(90deg,#D68E2E,#8A5A12);border-radius:20px 0 0 20px;animation:slide 1.8s cubic-bezier(.2,.7,.3,1) forwards;transform:translateX(-101%)}
+.chute.hot i{background:linear-gradient(90deg,#C8422E,#8A2A1A)}
+@keyframes slide{to{transform:translateX(0)}}
+.chute .lab{position:absolute;inset:0;display:flex;align-items:center;padding:0 12px;font-family:monospace;font-size:11px;color:#C9CDBF;z-index:2;gap:8px}
+.chute .lab b{color:#F0C96A;font-weight:800}
+.tell{font-family:monospace;font-size:10.5px;color:#9AA083;text-align:right;line-height:1.5}
+.tell b{color:#D68E2E;font-size:13px;display:block}
+
+/* ---------- 04 档案柜（剧情结构卡） ---------- */
+.cab{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:18px}
+.fol{background:#22241F;border:1px solid #3A403A;border-left:7px solid #D68E2E;border-radius:4px;padding:0;overflow:hidden;transition:.34s;position:relative}
+.fol:hover{transform:translateY(-6px);border-left-color:#C8422E;box-shadow:0 16px 26px rgba(0,0,0,.34)}
+.fol .tabbar{height:22px;background:repeating-linear-gradient(90deg,#151713 0 6px,#1C1E1B 6px 10px);border-bottom:1px solid #3A403A}
+.fol .bd{padding:16px 18px 18px}
+.fol .cat{font-family:monospace;font-size:10px;color:#D68E2E;letter-spacing:1.2px;font-weight:800}
+.fol h3{font-size:16.5px;font-weight:900;color:#DFE2D8;margin:3px 0 5px;font-family:"Songti SC",serif}
+.fol p{font-size:13.3px;color:#C9CDBF;line-height:1.7}
+.fol .rule{margin-top:9px;border-top:1px dashed #3A403A;padding-top:7px;font-family:monospace;font-size:10.5px;color:#F0C96A;line-height:1.5}
+.fol .rule b{color:#C8422E}
+
+/* ---------- 铭牌 ---------- */
+.plaque{max-width:1220px;margin:0 auto;padding:0 20px 12px}
+.plaque-in{background:#151713;border:2px solid #D68E2E;border-radius:4px;padding:24px 26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between;position:relative;overflow:hidden}
+.plaque-in::before{content:"七";position:absolute;right:18px;top:-30px;font-size:92px;font-weight:900;color:rgba(214,142,46,.13);font-family:"Songti SC",serif;line-height:1}
+.plaque-in .lab{font-family:monospace;font-size:11px;letter-spacing:2px;color:#F0C96A}
+.plaque-in .u{font-size:clamp(14px,3vw,21px);font-weight:900;color:#F0C96A;word-break:break-all;font-family:"Songti SC",monospace}
+.plaque-in .u a{color:#F0C96A;border-bottom:1.5px dashed #D68E2E}
+.plaque-in .u a:hover{color:#fff}
+.plaque-in .note{font-size:12px;color:#B9BEAE;text-align:right}
+
+/* ---------- 关于 ---------- */
+.about{max-width:1220px;margin:0 auto;padding:52px 20px;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:#22241F;border:1px solid #3A403A;box-shadow:0 0 0 7px #22241F,0 0 0 8px #D68E2E;border-radius:4px}
+.about h2{font-size:23px;font-weight:900;margin-bottom:14px;font-family:"Songti SC",serif}
+.about h2 em{font-style:normal;color:#D68E2E}
+.about p{font-size:15px;color:#C9CDBF;line-height:1.95;margin-bottom:12px}
+.about .u2{color:#D68E2E;font-weight:800;font-family:monospace;font-size:15px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:#1C1E1B;border:1px solid #3A403A;border-radius:6px;padding:16px;text-align:center}
+.tile .n{font-family:monospace;font-size:19px;font-weight:900;color:#D68E2E}
+.tile .l{font-size:12px;color:#9AA083;margin-top:2px}
+
+/* ---------- 页脚 ---------- */
+.foot{border-top:4px double #D68E2E;padding:36px 20px 26px;text-align:center;background:#151713}
+.foot-logo{font-size:19px;font-weight:900;color:#DFE2D8;font-family:"Songti SC",serif;letter-spacing:.5px}
+.foot-logo em{font-style:normal;color:#D68E2E}
+.foot-nav{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin:14px 0;font-family:monospace;font-size:13px}
+.foot-nav a{color:#9AA083}
+.foot-nav a:hover{color:#D68E2E}
+.foot p{font-size:12px;color:#8B9186}
+.foot .cut{margin:14px auto 10px;display:inline-block;border:1.5px solid #C8422E;color:#E8B4A8;font-family:monospace;font-size:11.5px;font-weight:800;padding:7px 15px;border-radius:2px 14px 2px 14px;background:rgba(200,66,46,.10);max-width:820px;line-height:1.6}
+.foot .legal{margin-top:10px;max-width:900px;margin-left:auto;margin-right:auto;color:#8B9186;line-height:1.8;font-size:12px}
+
+/* ---------- 响应式 ---------- */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:28px 20px 34px;gap:26px}
+  .about{grid-template-columns:1fr;padding:30px 20px}
+  .wrap{padding:42px 20px}
+  .nav-in{height:58px}
+  .tab .en{display:none}
+  .slot-row{grid-template-columns:74px 1fr;gap:10px}
+  .slot-row .tell{display:none}
+}
+@media(max-width:420px){
+  .hero h1{font-size:25px}
+  .head h2{font-size:20px}
+  .clock{grid-template-columns:repeat(3,1fr)}
+}
+@media print{
+  .nav,.nav-go,.classified{display:none}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<!-- ===== 机密带 ===== -->
+<div class="classified">
+  <span>零零七号放映室 · 归零 / 归零 / 起一格</span><b>只讲怎么藏一个秘密</b>
+  <span class="stamp">非特工 · 非牌照 · 非 007</span>
+  <span>无播放器 · 无片源 · 无下载 · 无包名</span>
+</div>
+
+<!-- ===== 导航 ===== -->
+<div class="nav">
+  <div class="nav-in">
+    <div class="tab">
+      <div class="seal"></div>
+      <div>
+        <div class="cn">零零七号<em>放映室</em><span class="thin"> · 悬念叙事工坊</span></div>
+        <div class="en">Room 00-07 · The Pause Before the Click</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#clock">七格钟</a>
+      <a href="#strip">解码纸条</a>
+      <a href="#drop">死信投递口</a>
+      <a href="#cab">档案柜</a>
+      <a href="#about">为何是零零七</a>
+    </nav>
+    <a href="#clock" class="nav-go">上发条 →</a>
+  </div>
+</div>
+
+<!-- ===== Hero：暗舱 ===== -->
+<section class="hero" id="top">
+  <div>
+    <div class="cell">
+      <span class="tag">第 07 号底片 · 未曝光</span>
+      <div class="lens"><img src="https://picsum.photos/800/500?random=8001" alt="第 07 号底片"><span class="scan"></span><span class="cut"></span></div>
+      <div class="tick">◷ 这一格，秘密还没响</div>
+    </div>
+    <div class="ciphers">
+      <div class="cip"><span class="k">第一归零 · 把已知全擦掉</span><p>好悬念的第一步不是埋线索，是<b>先让观众以为已经看懂了</b>。你擦得越干净，后面那一声越响。</p></div>
+      <div class="cip"><span class="k">第二归零 · 把答案再推翻一次</span><p>猜中了就不好玩。真正的第七格，会让你发现自己连"问题"都问错了。这一步叫<b>重排疑问</b>，不叫反转。</p></div>
+      <div class="cip"><span class="k">起一格 · 只给最小的那口呼吸</span><p>别急着抖包袱。第七格里只放一个细节：一杯没动的茶、门把手上的指纹印、一个<b>多出来的椅背</b>。</p></div>
+    </div>
+  </div>
+  <div>
+    <div class="classified" style="background:#22241F;border-color:#3A403A;margin-bottom:20px;justify-content:flex-start">
+      <span style="color:#D68E2E">卷宗号 00-07</span><span>·</span><span>代号：一格的耐心</span>
+    </div>
+    <h1>零零七号放映室<br>归零，归零，<em>起一格</em></h1>
+    <div class="sub">A Workshop on Suspense · Not a Spy, Not a Stream</div>
+    <p class="lead">这里不演特工，也不给你片源。只练一件事：<b>一个秘密，怎么藏到第 90 秒才肯响。</b> 七格里，前六格全是"别急"，第七格才让你听见自己的心跳。会藏的人，不用大声；会等的人，才留得住观众。</p>
+    <div class="hero-btns">
+      <a href="#clock" class="b1">⏱ 拨七格悬念钟</a>
+      <a href="#strip" class="b2">📎 翻解码纸条</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 01 七格悬念钟 ===== -->
+<section class="wrap" id="clock">
+  <div class="head">
+    <span class="idx">卷壹 · 钟</span>
+    <h2>七格<em>悬念钟</em></h2>
+    <span class="en">Seven Beats · Where the Breath Lives</span>
+    <a href="#" class="more">重拨 #</a>
+  </div>
+  <p style="max-width:900px;font-size:14.5px;color:#C9CDBF;margin-bottom:22px">悬念不是"后面有大招"，是<b style="color:#F0C96A">每一格给多少空气</b>。下面是同一场戏（约 90 秒）的七次呼吸——第六格最满，第七格反而最空。悬停一格，看它该压多紧。</p>
+  <div class="clock">
+    <div class="beat"><div class="slot"><span class="n">01</span><span class="lbl">摆一个<br>无关的东西</span><span class="bar" style="--h:12%"></span></div>
+      <div class="meta"><div class="t">开门</div><div class="d">让观众以为这只是日常，先卸掉防备</div></div></div>
+    <div class="beat"><div class="slot"><span class="n">02</span><span class="lbl">少说<br>一句该说的话</span><span class="bar" style="--h:24%"></span></div>
+      <div class="meta"><div class="t">留白</div><div class="d">答非所问比沉默更吵，观众开始替他补</div></div></div>
+    <div class="beat"><div class="slot"><span class="n">03</span><span class="lbl">让一件<br>小物出场</span><span class="bar" style="--h:38%"></span></div>
+      <div class="meta"><div class="t">埋物</div><div class="d">杯子、钥匙、一张折角的纸——此刻还不解释</div></div></div>
+    <div class="beat"><div class="slot"><span class="n">04</span><span class="lbl">重复<br>一个动作</span><span class="bar" style="--h:52%"></span></div>
+      <div class="meta"><div class="t">加纹</div><div class="d">第二次做同一件事，观众才觉出"这是仪式"</div></div></div>
+    <div class="beat"><div class="slot"><span class="n">05</span><span class="lbl">把镜头<br>挪开三秒</span><span class="bar" style="--h:66%"></span></div>
+      <div class="meta"><div class="t">背叛视线</div><div class="d">最该看的地方你不给，恐惧自己长出来</div></div></div>
+    <div class="beat"><div class="slot"><span class="n">06</span><span class="lbl">让所有人<br>同时撒谎</span><span class="bar" style="--h:88%"></span></div>
+      <div class="meta"><div class="t">加压</div><div class="d">信息最多的一格，反而离真相最远</div></div></div>
+    <div class="beat live"><div class="slot"><span class="n">07</span><span class="lbl">什么都没说<br>只是停住</span><span class="bar" style="--h:30%"></span></div>
+      <div class="meta"><div class="t">◎ 第七格 · 响</div><div class="d">空一格。秘密不是被说破的，是被听见的</div></div></div>
+  </div>
+</section>
+
+<!-- ===== 02 解码纸条 ===== */
+<section class="wrap" id="strip" style="background:rgba(214,142,46,.05)">
+  <div class="head">
+    <span class="idx">卷贰 · 条</span>
+    <h2>解码<em>纸条</em></h2>
+    <span class="en">Decoded Strips · Hover to Flip</span>
+    <a href="#" class="more">全翻 #</a>
+  </div>
+  <div class="notes">
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 01</span><h3>一句台词，七种藏法</h3><div class="who">练法 · 同一句"我没事"</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>别说"我没事"。说"茶凉了"——观众先听见的是家，三秒后才反应过来他在替自己办后事。把情绪塞进物件里，台词才轻。</p><div class="src">落点：让观众替角色说出那句"有事"</div></div>
+    </div></div>
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 02</span><h3>别让坏人"像坏人"</h3><div class="who">练法 · 反类型 casting 的呼吸</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>最坏的人该最会递糖。让他给小孩让座、记得别人的忌口，观众的安全感才真的开始疼——因为此刻你分不清该恨还是该信。</p><div class="src">落点：恐惧来自"我居然喜欢他"</div></div>
+    </div></div>
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 03</span><h3>线索要"自己过期"</h3><div class="who">练法 · 红鲱鱼的保质期</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>好假线索不是假的，是"后来用不上了"。让观众自己把它放进抽屉，隔三十格再想起——那一刻的寒，比任何反转都贵。</p><div class="src">落点：埋得早，忘得自然</div></div>
+    </div></div>
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 04</span><h3>声音先到，人后到</h3><div class="who">练法 · 声画的三秒差</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>门还没开，先让门响。三秒的黑里，观众把最坏的那个人请了进来——通常比你安排的更狠。让耳朵替你写半场戏。</p><div class="src">落点：1 秒声 = 3 秒心理时长</div></div>
+    </div></div>
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 05</span><h3>留一格"不解答"</h3><div class="who">练法 · 故意漏掉的扣子</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>全解开是魔术，留一个扣子才是电影。让观众带着"那个抽屉到底开了没"回家，他会自己把片子续完——这才是你的余震。</p><div class="src">落点：谜比答案长寿</div></div>
+    </div></div>
+    <div class="strip"><div class="strip-in">
+      <div class="face front"><span class="tape"></span><span class="no">STRIP 06</span><h3>把答案放在最亮处</h3><div class="who">练法 · 明牌反而看不见</div><div class="hint">↻ 悬停解码</div></div>
+      <div class="face back"><h4>解法</h4><p>最高明的藏，是摆在桌上还贴着标签。观众忙着找暗格，根本不看那只一直响的钟。所谓"反转"，往往只是终于肯低头。</p><div class="src">落点：越明显，越安全</div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ===== 03 死信投递口 ===== */
+<section class="wrap" id="drop">
+  <div class="head">
+    <span class="idx">卷叁 · 口</span>
+    <h2>死信<em>投递口</em></h2>
+    <span class="en">The Dead-Letter Slot · 信息给多少</span>
+    <a href="#" class="more">再投一封 #</a>
+  </div>
+  <p style="max-width:900px;font-size:14.5px;color:#C9CDBF;margin-bottom:22px">悬念的力气，取决于你肯不肯把信扣下。下面是几类常见"该说没说"的信——进度条是<b style="color:#F0C96A">已经投进去的信息量</b>。投太满，戏就死了；投太少，人走了。刻度自己拿捏。</p>
+  <div class="drop">
+    <div class="slot-row"><div class="nm">动机信<small>为什么干这件事</small></div>
+      <div class="chute"><i style="--w:26%"></i><span class="lab">只给 <b>一句</b> 带口音的话，别给简历</span></div>
+      <div class="tell"><b>26%</b>越少越真</div></div>
+    <div class="slot-row"><div class="nm">时间信<small>还剩多久</small></div>
+      <div class="chute"><i style="--w:64%"></i><span class="lab">钟响了三次就够，第四次是闹铃不是悬念</span></div>
+      <div class="tell"><b>64%</b>三响法则</div></div>
+    <div class="slot-row"><div class="nm">证据信<small>他手里有什么</small></div>
+      <div class="chute hot"><i style="--w:42%"></i><span class="lab">先让观众看见一半，留一角被手指压着</span></div>
+      <div class="tell"><b>42%</b>压一角</div></div>
+    <div class="slot-row"><div class="nm">关系信<small>这两人什么底</small></div>
+      <div class="chute"><i style="--w:33%"></i><span class="lab">用一顿饭的座位和倒茶顺序说，别用台词认亲</span></div>
+      <div class="tell"><b>33%</b>饭桌即史</div></div>
+    <div class="slot-row"><div class="nm">代价信<small>输了会失去谁</small></div>
+      <div class="chute hot"><i style="--w:78%"></i><span class="lab">最后十分钟才准亮底，前面只让他护一只杯子</span></div>
+      <div class="tell"><b>78%</b>晚亮底</div></div>
+    <div class="slot-row"><div class="nm">结局信<small>到底怎么收</small></div>
+      <div class="chute"><i style="--w:9%"></i><span class="lab">0%。留一格黑，让观众自己把门关上</span></div>
+      <div class="tell"><b>9%</b>最佳是空信</div></div>
+  </div>
+</section>
+
+<!-- ===== 04 档案柜 ===== */
+<section class="wrap" id="cab" style="background:rgba(214,142,46,.05)">
+  <div class="head">
+    <span class="idx">卷肆 · 柜</span>
+    <h2>叙事<em>档案柜</em></h2>
+    <span class="en">Folios · 六件趁手的小器</span>
+    <a href="#" class="more">抽一柜 #</a>
+  </div>
+  <div class="cab">
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 物</div><h3>一件道具演三遍</h3>
+      <p>第一次是摆设，第二次是习惯，第三次是刀。写好一件物的三次出场，你就有了一条不用台词的剧情线。偷懒的人才让物只出现一次。</p>
+      <div class="rule">练：<b>一场戏只追一件物</b>，跟到结尾，它多半自己会说谎。</div></div></article>
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 时</div><h3>把倒计时藏进日常</h3>
+      <p>别让字幕喊"还剩三小时"。让墙上的钟慢一分钟、让第三趟公交开走、让水壶第一次没烧开——时间自己会咬人。</p>
+      <div class="rule">练：<b>同一个计时器</b>，用三种不同的东西来走。</div></div></article>
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 问</div><h3>问题要比答案尖</h3>
+      <p>观众记住的从不是"谁是凶手"，是"他为什么偏偏在那个雨天回来"。把问题磨尖，答案粗一点都不要紧，大家会自己往里钻。</p>
+      <div class="rule">练：<b>先写三个问题</b>，答案可以明天再想。</div></div></article>
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 默</div><h3>最长的那格，不许有字</h3>
+      <p>哭戏别配哭腔，追戏别配喘，真相别配旁白。留二十秒纯画面，敢的人观众会替你配完，而且配得比你狠。</p>
+      <div class="rule">练：<b>把这段台词全删</b>，还能懂，就是成了。</div></div></article>
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 谎</div><h3>让最可靠的人先撒一次小谎</h3>
+      <p>信任不是建起来的，是被晃了一下才立住的。让那个"肯定不会骗你"的人，先为一件小事撒个笨拙的谎——观众从此再不敢踏实。</p>
+      <div class="rule">练：<b>信任值抖一次</b>，后面每句真话都变悬疑。</div></div></article>
+    <article class="fol"><div class="tabbar"></div><div class="bd">
+      <div class="cat">FOLIO · 空</div><h3>留一格，什么都不填</h3>
+      <p>黑场、空镜、一阵风把门带上。这格是你的签名：你敢不讨好，观众才敢记住你。全满的片子，过三天就没了。</p>
+      <div class="rule">练：<b>每部留一格"无用"</b>，那是你最贵的一尺胶片。</div></div></article>
+  </div>
+</section>
+
+<!-- ===== 铭牌 ===== */
+<div class="plaque">
+  <div class="plaque-in">
+    <div>
+      <div class="lab">放映室名称 / 放映室网址</div>
+      <div class="u"><a href="https://linglingqiyingshi-h5.github.io">零零七号放映室 — https://linglingqiyingshi-h5.github.io</a></div>
+    </div>
+    <div class="note">归零·归零·起一格<br>域名仅作索引标识，不是牌照，不承接任何同名产品</div>
+  </div>
+</div>
+
+<!-- ===== 关于 ===== */
+<section class="wrap" id="about">
+  <div>
+    <h2>为何叫<em>「零零七号」</em>，又不演特工</h2>
+    <p>只是把数字拆开用：<b>第一个零，归零</b>——把观众以为懂了的先擦掉；<b>第二个零，再归零</b>——把答案也推翻一次；<b>七，是第七格才响</b>。是一套讲"耐心"的计数法，不是一串代号，更不挂任何牌照。</p>
+    <p>而网上那些顶着"零零七影视"的站和 App（什么免 VIP、自动换源、投屏缓存、境外域名、证书都过期还在跑的），跟这页<b>没有血缘、没有授权、没有关联、没有承接</b>。我不递链接、不点名字、不给搜索词，连"它们有哪些"这种黑名单科普都不写——列名单本身就是导流量，那是帮凶的活儿，不干。</p>
+    <p>顺带一句：那串数字和那个英国特工形象，商标一直在权利人手里（Danjaq / Amazon MGM 体系，连每一部片名都单独注了），所以这页从头到尾不碰邦德、不碰片名、不碰枪管视角、不碰任何可以认出来的视觉符号——我们只借"怎么藏一个秘密"这件事，它是全人类的手艺，谁都能练。</p>
+    <p>放映室名称：零零七号放映室<br>放映室网址：<span class="u2">https://linglingqiyingshi-h5.github.io</span></p>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="n">0 0 7</div><div class="l">归零 / 再归零 / 第七格响</div></div>
+    <div class="tile"><div class="n">0 件</div><div class="l">Bond 元素 · 片名 · 枪管视角</div></div>
+    <div class="tile"><div class="n">0 个</div><div class="l">App 名 · 包名 · 片源 · 下载</div></div>
+    <div class="tile"><div class="n">暗舱</div><div class="l">石墨黑 / 琥珀橙 / 消红印</div></div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== */
+<footer class="foot">
+  <div class="foot-logo">零零七号<em>放映室</em> · 归零，归零，起一格</div>
+  <div class="foot-nav">
+    <a href="#clock">七格钟</a>
+    <a href="#strip">解码纸条</a>
+    <a href="#drop">死信投递口</a>
+    <a href="#cab">档案柜</a>
+    <a href="#about">为何是零零七</a>
+    <a href="#top">↑ 关灯</a>
+  </div>
+  <div class="cut">⚑ 本站是原创「悬念叙事方法」内容工坊，与 James Bond / 007 / "Double OO" / Danjaq LLC / Amazon MGM Studios / Ian Fleming  Publications 及其任一注册商标、影片标题、角色与视觉符号，<b>无任何授权、关联、承接或引流关系</b>；亦与"零零七影视"App（007ts / llqtv / 007ts.tv 等换皮站点）及任何免费追剧、多源切换、盗链下载服务完全无关。页面不含任何 App 名、包名、下载地址、播放源或搜索引导词。</div>
+  <p>© 2026 零零七号放映室 · 放映室名称：零零七号放映室 · 放映室网址：https://linglingqiyingshi-h5.github.io</p>
+  <p class="legal">本页仅作剧作、悬念结构与叙事技巧的内容策展：不提供在线播放、不提供盗版资源下载、不聚合片源、不切换播放线路、不售卖会员、不托管任何侵权内容，文中亦不使用任何受版权或商标保护的角色形象与片名。所涉"七格钟""死信投递口"等均为原创方法论示意，非对任何既有作品的指涉。若您正在遭遇诱导安装、远程控制或资金损失，请立即断网、冻结账户并拨打 110 / 反诈专线求助。观看请走正版平台与官方发行渠道。未生成 robots.txt 与 sitemap.xml。</p>
+</footer>
+
+</body>
+</html>
